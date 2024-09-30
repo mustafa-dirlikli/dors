@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şirket Profili</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tema.css">
+    <style>
+        .profile-header {
+            margin-top: 150px;
+            background-color: #01401C;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            border: 5px solid #01401C;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            position: absolute;
+            top: -75px;
+            left: calc(50% - 75px);
+        }
+
+        .profile-header h2 {
+            margin-top: 80px;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-header p {
+            margin: 0;
+        }
+
+        .card-header {
+            background-color: #01401C;
+            color: #fff;
+        }
+
+        .card-body {
+            background-color: #fff;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Başlangıcı -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <form class="d-flex ms-auto me-auto ara" style="max-width: 400px;">
+                    <input class="form-control me-2 " type="search" placeholder="Ara" aria-label="Search">
+                    <button class="btn btn-outline-success " type="submit"><i class="bi bi-search"></i> Ara</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Bilgilendirme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Hesap Aç</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Sonu -->
+
+    <div class="container mt-5">
+        <!-- Profil Başlık -->
+        <div class="profile-header">
+            <img src="https://st2.depositphotos.com/3922907/7287/i/450/depositphotos_72874557-stock-photo-arrow-head-with-financial-graph.jpg" alt="Şoför Fotoğrafı">
+            <h2><span class="view-mode" id="name">ABC Boru</span>
+                <input type="text" class="edit-mode form-control" id="name-input" style="display: none;" value="ABC Boru">
+            </h2>
+            <p><strong>Şirket ID:</strong> <span class="view-mode" id="driver-id">543456</span>
+                <input type="text" class="edit-mode form-control" id="driver-id-input" style="display: none;" value="543456">
+            </p>
+            <p><strong>Telefon:</strong> <span class="view-mode" id="phone">+90 123 456 7890</span>
+                <input type="text" class="edit-mode form-control" id="phone-input" style="display: none;" value="+90 123 456 7890">
+            </p>
+            <p><strong>Email:</strong> <span class="view-mode" id="email">info@abcboru.com</span>
+                <input type="email" class="edit-mode form-control" id="email-input" style="display: none;" value="info@abcboru.com">
+            </p>
+            <p><strong>Kuruluş Yılı:</strong> <span class="view-mode" id="balance">2005</span>
+                <input type="text" class="edit-mode form-control" id="balance-input" style="display: none;" value="2005">
+            </p>
+        </div>
+
+        <!-- Profil İçeriği -->
+        <div class="row">
+            <!-- Kişisel Bilgiler -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        Şirket Bilgileri
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Adres:</strong> <span class="view-mode" id="address">İstanbul, Türkiye</span>
+                            <input type="text" class="edit-mode form-control" id="address-input" style="display: none;" value="İstanbul, Türkiye">
+                        </p>
+                        <p><strong>Hizmet Alanı:</strong> <span class="view-mode" id="dob">Türkiye Genelinde</span>
+                            <input type="text" class="edit-mode form-control" id="dob-input" style="display: none;" value="Türkiye Genelinde">
+                        </p>
+                        <p><strong>Çalışan Sayısı:</strong> <span class="view-mode" id="experience">150</span>
+                            <input type="number" class="edit-mode form-control" id="experience-input" style="display: none;" value="150">
+                        </p>
+                        <p><strong>Web Sitesi:</strong> <span class="view-mode" id="website">www.abcboru.com</span>
+                            <input type="text" class="edit-mode form-control" id="website-input" style="display: none;" value="www.abcboru.com">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- İletişim -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        İletişim
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Telefon:</strong> <span class="view-mode" id="phone">+90 123 456 7890</span>
+                            <input type="text" class="edit-mode form-control" id="phone-input" style="display: none;" value="+90 123 456 7890">
+                        </p>
+                        <p><strong>Email:</strong> <span class="view-mode" id="email">info@abcboru.com</span>
+                            <input type="email" class="edit-mode form-control" id="email-input" style="display: none;" value="info@abcboru.com">
+                        </p>
+                        <a href="mailto:info@abcboru.com" class="btn btn-primary view-mode" id="email-link">Email Gönder</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercih Edilen Yükler -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Tercih Edilen Yükler
+            </div>
+            <div class="card-body">
+                <p><b><span class="view-mode" id="contact-phone">Rulo Sac</span></b>
+                    <input type="text" class="edit-mode form-control" id="contact-phone-input" style="display: none;" value="Rulo Sac">
+                </p>
+                <p><b><span class="view-mode" id="contact-email">Profil Demir</span></b>
+                    <input type="text" class="edit-mode form-control" id="contact-email-input" style="display: none;" value="Profil Demir">
+                </p>
+                <p><b><span class="view-mode" id="contact-pvc">Pvc Boru</span></b>
+                    <input type="text" class="edit-mode form-control" id="contact-pvc-input" style="display: none;" value="Pvc Boru">
+                </p>
+            </div>
+        </div>
+
+        <!-- Düğmeler -->
+        <div class="d-flex justify-content-between" id="button-container">
+            <button class="btn btn-primary" id="edit-button">Profili Düzenle</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function enableEditing() {
+                const viewElements = document.querySelectorAll(".view-mode");
+                const editElements = document.querySelectorAll(".edit-mode");
+
+                // Düzenleme moduna geç
+                viewElements.forEach(el => el.style.display = "none");
+                editElements.forEach(el => el.style.display = "block");
+
+                // "Kaydet" ve "İptal" butonlarını ekle
+                buttonContainer.innerHTML = `
+                    <button class="btn btn-success" id="save-button">Kaydet</button>
+                    <button class="btn btn-danger" id="cancel-button">İptal</button>
+                `;
+
+                document.getElementById("save-button").addEventListener("click", saveChanges);
+                document.getElementById("cancel-button").addEventListener("click", cancelEditing);
+            }
+
+            function saveChanges() {
+                const fields = [
+                    { spanId: "name", inputId: "name-input" },
+                    { spanId: "driver-id", inputId: "driver-id-input" },
+                    { spanId: "phone", inputId: "phone-input" },
+                    { spanId: "email", inputId: "email-input" },
+                    { spanId: "balance", inputId: "balance-input" },
+                    { spanId: "address", inputId: "address-input" },
+                    { spanId: "dob", inputId: "dob-input" },
+                    { spanId: "experience", inputId: "experience-input" },
+                    { spanId: "contact-phone", inputId: "contact-phone-input" },
+                    { spanId: "contact-email", inputId: "contact-email-input" },
+                    { spanId: "contact-pvc", inputId: "contact-pvc-input" }
+                ];
+
+                fields.forEach(field => {
+                    const spanElement = document.getElementById(field.spanId);
+                    const inputElement = document.getElementById(field.inputId);
+                    if (spanElement && inputElement) {
+                        spanElement.innerText = inputElement.value + (field.suffix || "");
+                    }
+                });
+
+                // Email linkini güncelle
+                const emailLink = document.getElementById("email-link");
+                emailLink.href = "mailto:" + document.getElementById("email-input").value;
+
+                // Görünümü geri döndür
+                toggleViewMode();
+            }
+
+            function cancelEditing() {
+                // Düzenlemeleri iptal et ve düzenleme modunu kapat
+                toggleViewMode();
+            }
+
+            function toggleViewMode() {
+                const viewElements = document.querySelectorAll(".view-mode");
+                const editElements = document.querySelectorAll(".edit-mode");
+
+                // Görünümü geri döndür
+                viewElements.forEach(el => el.style.display = "inline");
+                editElements.forEach(el => el.style.display = "none");
+                buttonContainer.innerHTML = `<button class="btn btn-primary" id="edit-button">Profili Düzenle</button>`;
+
+                // Butona yeniden olay dinleyicisi ekle
+                document.getElementById("edit-button").addEventListener("click", enableEditing);
+            }
+
+            const buttonContainer = document.getElementById("button-container");
+
+            // Başlangıçta düzenleme butonuna olay dinleyicisi ekle
+            document.getElementById("edit-button").addEventListener("click", enableEditing);
+        });
+    </script>
+</body>
+
+</html>

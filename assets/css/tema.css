@@ -1,0 +1,193 @@
+.card {
+    position: relative;
+    overflow: hidden;
+}
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 0, 0, 0.7); /* Koyu kırmızı arka plan */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 1;
+}
+.card-body {
+    position: relative;
+    z-index: 1;
+
+}
+.form{
+    border: 1px solid rgb(167, 164, 164);
+}
+.ara{padding-left: 3vw;}
+
+:root {
+    --yeşil: #01401C;
+    --profilback: #038C4C;
+
+}
+
+.custom-select {
+    width: 250px;
+    /* İstenilen genişlik */
+
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+}
+
+.select-container .form-label {
+    margin-right: 10px;
+}
+
+mark {
+    padding: 4px 8px;
+    border-radius: 10px;
+    background-color: var(--turuncu);
+    font-weight: bold;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--yeşil);
+}
+.navbar-logo {
+    height: 10vh; /* Logo yüksekliğini ayarlayın */
+    object-fit: contain; /* Logo boyutlandırmasını ve konumunu ayarlayın */
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--yeşil);
+}
+
+.container h1 {
+    color: #333;
+}
+
+
+.sidebar {
+    border-right: 1px solid #ddd;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+    /* Resim yüksekliğini belirleyin */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-container {
+    padding: 4px 8px;
+    height: 75vh !important;
+    /* Konteyner yüksekliği, ayarlayabilirsiniz */
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    /* Scroll bar genişliği */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Scroll bar arka plan rengi */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Scroll bar rengi */
+    border-radius: 6px;
+    /* Scroll bar köşe yuvarlama */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Scroll bar üzerine gelindiğinde renk değişimi */
+}.btn-primary{
+    background-color: #01401C !important;
+    border: none;
+}
+.bg-primary{
+    background-color: rgb(255, 255, 255) !important;
+}
+/* background-color: #b9ff17 !important;*/
+/*dinamik fiyuat arlığı*/
+.range-container {
+    position: relative;
+    width: 300px;
+    height: 80px; /* Konteynerin yüksekliğini ayarlayarak yer açtık */
+}
+
+input[type="range"] {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    -webkit-appearance: none;
+    background: none;
+    top: 20px; /* Slider'ı aşağıya kaydırdık */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #005300;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #003b0a;
+    cursor: pointer;
+}
+
+.slider-track {
+    position: absolute;
+    height: 5px;
+    background: #1dc04e;
+    top: 25px; /* Track'i slider ile hizaladık */
+    z-index: 0;
+}
+
+.slider-track::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background: #007bff;
+    z-index: -1;
+}
+
+.range-values {
+    position: absolute;
+    top: 50px; /* Fiyatları slider'ın altına kaydırdık */
+    width: 100%;
+    text-align: center;
+}

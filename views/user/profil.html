@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tema.css">
+    <style>
+        .profile-header {
+            margin-top: 150px;
+            background-color: #01401C;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            border: 5px solid #01401C;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            position: absolute;
+            top: -75px;
+            left: calc(50% - 75px);
+        }
+
+        .profile-header h2 {
+            margin-top: 80px;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-header p {
+            margin: 0;
+        }
+
+        .card-header {
+            background-color: #01401C;
+            color: #fff;
+        }
+
+        .card-body {
+            background-color: #fff;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Başlangıcı -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <form class="d-flex ms-auto me-auto ara" style="max-width: 400px;">
+                    <input class="form-control me-2 " type="search" placeholder="Ara" aria-label="Search">
+                    <button class="btn btn-outline-success " type="submit"><i class="bi bi-search"></i> Ara</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Bilgilendirme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Hesap Aç</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar Sonu -->
+
+    <div class="container mt-5">
+        <!-- Profil Başlık -->
+        <div class="profile-header">
+            <img src="https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113_960_720.png" alt="Şoför Fotoğrafı">
+            <h2><span class="view-mode" id="name">Ali Yılmaz</span>
+                <input type="text" class="edit-mode form-control" id="name-input" style="display: none;" value="Ali Yılmaz">
+            </h2>
+            <p><strong>Şoför ID:</strong> <span class="view-mode" id="driver-id">123456</span>
+                <input type="text" class="edit-mode form-control" id="driver-id-input" style="display: none;" value="123456">
+            </p>
+            <p><strong>Telefon:</strong> <span class="view-mode" id="phone">+90 123 456 7890</span>
+                <input type="text" class="edit-mode form-control" id="phone-input" style="display: none;" value="+90 123 456 7890">
+            </p>
+            <p><strong>Email:</strong> <span class="view-mode" id="email">ali.yilmaz@example.com</span>
+                <input type="email" class="edit-mode form-control" id="email-input" style="display: none;" value="ali.yilmaz@example.com">
+            </p>
+            <p>
+                <strong>Bekleyen Bakiye:</strong> <span class="view-mode" id="balance">24.000 TL</span>
+                <input type="text" class="edit-mode form-control" id="balance-input" style="display: none;" value="24.000 TL">
+            </p>
+        </div>
+
+        <!-- Profil İçeriği -->
+        <div class="row">
+            <!-- Kişisel Bilgiler -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        Kişisel Bilgiler
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Doğum Tarihi:</strong> <span class="view-mode" id="dob">1985-01-01</span>
+                            <input type="date" class="edit-mode form-control" id="dob-input" style="display: none;" value="1985-01-01">
+                        </p>
+                        <p><strong>Adres:</strong> <span class="view-mode" id="address">İstanbul, Türkiye</span>
+                            <input type="text" class="edit-mode form-control" id="address-input" style="display: none;" value="İstanbul, Türkiye">
+                        </p>
+                        <p><strong>Deneyim:</strong> <span class="view-mode" id="experience">10 Yıl</span>
+                            <input type="number" class="edit-mode form-control" id="experience-input" style="display: none;" value="10">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Araç Bilgileri -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        Araç Bilgileri
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Araç Markası:</strong> <span class="view-mode" id="car-brand">Mercedes-Benz</span>
+                            <input type="text" class="edit-mode form-control" id="car-brand-input" style="display: none;" value="Mercedes-Benz">
+                        </p>
+                        <p><strong>Araç Modeli:</strong> <span class="view-mode" id="car-model">Actros 1841</span>
+                            <input type="text" class="edit-mode form-control" id="car-model-input" style="display: none;" value="Actros 1841">
+                        </p>
+                        <p><strong>Plaka:</strong> <span class="view-mode" id="plate">34ABC123</span>
+                            <input type="text" class="edit-mode form-control" id="plate-input" style="display: none;" value="34ABC123">
+                        </p>
+                        <p><strong>Yıl:</strong> <span class="view-mode" id="car-year">2019</span>
+                            <input type="number" class="edit-mode form-control" id="car-year-input" style="display: none;" value="2019">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim -->
+        <div class="card mb-4">
+            <div class="card-header">
+                İletişim
+            </div>
+            <div class="card-body">
+                <p><strong>Telefon:</strong> <span class="view-mode" id="contact-phone">+90 123 456 7890</span>
+                    <input type="text" class="edit-mode form-control" id="contact-phone-input" style="display: none;" value="+90 123 456 7890">
+                </p>
+                <p><strong>Email:</strong> <span class="view-mode" id="contact-email">ali.yilmaz@example.com</span>
+                    <input type="email" class="edit-mode form-control" id="contact-email-input" style="display: none;" value="ali.yilmaz@example.com">
+                </p>
+                <a href="mailto:ali.yilmaz@example.com" class="btn btn-primary view-mode" id="email-link">Email Gönder</a>
+            </div>
+        </div>
+
+        <!-- Düğmeler -->
+        <div class="d-flex justify-content-between" id="button-container">
+            <button class="btn btn-primary" id="edit-button">Profili Düzenle</button>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function enableEditing() {
+                const viewElements = document.querySelectorAll(".view-mode");
+                const editElements = document.querySelectorAll(".edit-mode");
+    
+                // Düzenleme moduna geç
+                viewElements.forEach(el => el.style.display = "none");
+                editElements.forEach(el => el.style.display = "block");
+    
+                // "Kaydet" ve "İptal" butonlarını ekle
+                buttonContainer.innerHTML = `
+                    <button class="btn btn-success" id="save-button">Kaydet</button>
+                    <button class="btn btn-danger" id="cancel-button">İptal</button>
+                `;
+    
+                document.getElementById("save-button").addEventListener("click", saveChanges);
+                document.getElementById("cancel-button").addEventListener("click", cancelEditing);
+            }
+    
+            function saveChanges() {
+                const fields = [
+                    { spanId: "name", inputId: "name-input" },
+                    { spanId: "driver-id", inputId: "driver-id-input" },
+                    { spanId: "phone", inputId: "phone-input" },
+                    { spanId: "email", inputId: "email-input" },
+                    { spanId: "balance", inputId: "balance-input" },
+                    { spanId: "dob", inputId: "dob-input" },
+                    { spanId: "address", inputId: "address-input" },
+                    { spanId: "experience", inputId: "experience-input", suffix: " Yıl" },
+                    { spanId: "car-brand", inputId: "car-brand-input" },
+                    { spanId: "car-model", inputId: "car-model-input" },
+                    { spanId: "plate", inputId: "plate-input" },
+                    { spanId: "car-year", inputId: "car-year-input" },
+                    { spanId: "contact-phone", inputId: "contact-phone-input" },
+                    { spanId: "contact-email", inputId: "contact-email-input" },
+                ];
+    
+                fields.forEach(field => {
+                    const spanElement = document.getElementById(field.spanId);
+                    const inputElement = document.getElementById(field.inputId);
+                    spanElement.innerText = inputElement.value + (field.suffix || "");
+                });
+    
+                // Email linkini güncelle
+                const emailLink = document.getElementById("email-link");
+                emailLink.href = "mailto:" + document.getElementById("contact-email-input").value;
+    
+                // Görünümü geri döndür
+                toggleViewMode();
+            }
+    
+            function cancelEditing() {
+                // Düzenlemeleri iptal et ve düzenleme modunu kapat
+                toggleViewMode();
+            }
+    
+            function toggleViewMode() {
+                const viewElements = document.querySelectorAll(".view-mode");
+                const editElements = document.querySelectorAll(".edit-mode");
+    
+                // Görünümü geri döndür
+                viewElements.forEach(el => el.style.display = "inline");
+                editElements.forEach(el => el.style.display = "none");
+                buttonContainer.innerHTML = `<button class="btn btn-primary" id="edit-button">Profili Düzenle</button>`;
+                
+                // Butona yeniden olay dinleyicisi ekle
+                document.getElementById("edit-button").addEventListener("click", enableEditing);
+            }
+    
+            const buttonContainer = document.getElementById("button-container");
+    
+            // Başlangıçta düzenleme butonuna olay dinleyicisi ekle
+            document.getElementById("edit-button").addEventListener("click", enableEditing);
+        });
+    </script>
+    
+</body>
+
+</html>

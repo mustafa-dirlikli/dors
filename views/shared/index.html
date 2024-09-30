@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/../assets/css/tema.css">
+
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+
+
+<body>
+    <!-- Navbar Başlangıcı -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/../assets/images/logo/logo.png" alt="logo" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <form class="d-flex ms-auto me-auto ara" style="max-width: 400px;">
+                    <input class="form-control me-2 " type="search" placeholder="Ara" aria-label="Search">
+                    <button class="btn btn-outline-success " type="submit"><i class="bi bi-search"></i> Ara</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Bilgilendirme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Giriş Yap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Hesap Aç</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    
+    <!-- Navbar Sonu -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3 "></div>
+            <div class=" col-md-9  d-flex justify-content-between">
+
+                <div class="align-self-center">
+                    <p> <span id="yuksayisi"> 15.342 </span> Yük İçerisinden</p>
+                </div>
+
+                <div class=" d-flex justify-content-center align-items-center gap-2 select-container">
+                    <label for="fiyat" class="form-label">Sıralama</label>
+                    <i class="fa-solid fa-arrow-down-wide-short"></i><!-- Font Awesome ikonu -->
+                    <select id="fiyat" class="form-select custom-select">
+                        <option value="">Önce En Yüksek Fiyat</option>
+                        <option value="">Önce En Düşük Fiyat</option>
+                        <option value="">Önce En Yüksek Mesafe</option>
+                        <option value="">Önce En Düşük Mesafe</option>
+                        <option value="">En Yüksek Sürücü Puanı</option>
+                        <option value="">Önce En Düşük Sürücü Puanı</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana İçerik Başlangıcı -->
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Sol Sidebar (Filtreleme Alanları) -->
+            <div class="col-md-3 sidebar">
+                <h4>Filtreleme</h4>
+                <!-- Filtreleme Seçenekleri -->
+                <form>
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Yük Tipi</label>
+                        <select class="form-select" id="category">
+                            <option selected>Tümü</option>
+                            <option value="1">Genel Kargo</option>
+                            <option value="2">Dökme Yük</option>
+                            <option value="3">Sıvı Yük</option>
+                            <option value="4">Gaz Yük</option>
+                            <option value="5">Soğuk Zincir Yük</option>
+                            <option value="6">Tehlikeli Madde</option>
+                            <option value="7">Ağır Yük </option>
+                            <option value="8">Taşıt Yükü</option>
+                            <option value="8">Projeler ve Özel Yükler</option>
+                            
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fabrika" class="form-label">Fabrika</label>
+                        <select class="form-select" id="fabrika">
+                            <option selected>Şehir</option>
+                            <!-- Şehir seçeneklerini buraya ekleyin -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priceRange" class="form-label">Fiyat Aralığı</label>
+                        <div class="range-container">
+                            <input type="range" id="minRange" min="0" max="10000" step="100" value="2000" oninput="updateRange()">
+                            <input type="range" id="maxRange" min="0" max="10000" step="100" value="8000" oninput="updateRange()">
+                            <div class="range-values">
+                                <span id="minValue">2000</span> - <span id="maxValue">8000</span>
+                            </div>
+                            <div class="slider-track"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="locationStart" class="form-label">Başlangıç Konumu</label>
+                        <input type="text" class="form-control" id="locationStart"
+                        
+                            placeholder="Başlangıç Şehir veya İlçe">
+                    </div>
+                    <div class="mb-3">
+                        <label for="locationEnd" class="form-label">Bitiş Konumu</label>
+                        <input type="text" class="form-control" id="locationEnd" placeholder="Bitiş Şehir veya İlçe">
+                    </div>
+                    <button type="submit" class="btn flt btn-primary">Filtrele</button>
+                </form>
+
+            </div>
+            <!-- Sağ İçerik (İlanlar) -->
+            <div class="col-md-9">
+                <h4>İlanlar</h4>
+                <div class="list-container row" id="ilanlar">
+                    <!-- İlanlar buraya yüklenecek -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ana İçerik Sonu -->
+
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <p class="text-body-secondary">© 2024</p>
+            </div>
+
+            <div class="col mb-3">
+
+            </div>
+
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    // İlan Verilerini Simüle Etmek İçin Örnek Veriler
+    var ilanlar = [];
+    for (var i = 0; i < 100000; i++) { // Daha makul bir sayı kullanın
+        ilanlar.push({
+            title: "Demir Çelik A.Ş" + (i + 1),
+            description: "İlan açıklaması burada yer alır.",
+            image: "https://i0.shbdn.com/photos/44/56/45/x5_1087445645ugn.jpg"
+        });
+    }
+
+    // Lazy Load ve Sanallaştırma İçin Intersection Observer
+    const ilanlarContainer = document.getElementById('ilanlar');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const ilanElement = entry.target;
+                const imgElement = ilanElement.querySelector('img');
+                imgElement.src = imgElement.dataset.src;
+                observer.unobserve(ilanElement);
+            }
+        });
+    }, observerOptions);
+
+    function loadIlanlar(start, end) {
+        for (let i = start; i < end; i++) {
+            if (i >= ilanlar.length) return;
+
+            const ilan = ilanlar[i];
+            const ilanCard = document.createElement('div');
+            ilanCard.className = 'col-md-4 mb-4';
+            ilanCard.innerHTML = `
+            
+                <div class="card mb-4">
+    <a href="detay.html"><img data-src="${ilan.image}" class="card-img-top" alt="İlan Resmi"></a>
+    
+      <div class="overlay">
+                    <span>Acil Teslimat</span>
+                </div>
+    <div class="card-body">
+    <h5 class="card-title">${ilan.title}</h5>
+    
+    <!-- İlan Bilgileri -->
+    <p><strong>Hedef:</strong> Hatay -> Adana</p>
+    <p><strong>Yük Türü:</strong> Metal Sac</p>
+    <p><strong>Dorse Türü:</strong> Frigo Dorse</p>
+    <p><strong>Min Sürücü Puanı:</strong> 85</p>
+    <p><strong>Teslimat Süresi:</strong> 36 Saat</p>
+    
+    <!-- Fiyat ve Detaylar -->
+    <div class=" mt-2 d-flex justify-content-between align-items-center">
+        <a href="detay.html" class="btn btn-outline-info">Detayları Gör</a>
+      <mark>  <h6 class="mb-0" style="color:white;">  50.000 TL</h6>  </mark> 
+    </div>
+    </div>
+            </div> 
+    
+            `;
+            ilanlarContainer.appendChild(ilanCard);
+            observer.observe(ilanCard);
+        }
+    }
+
+    let loading = false;
+    const batchSize = 20;
+    let currentIndex = 0;
+
+    function onScroll() {
+        if (loading) return;
+        const container = document.querySelector('.list-container');
+        const scrollBottom = container.scrollHeight - container.scrollTop <= container.clientHeight;
+
+        if (scrollBottom) {
+            loading = true;
+            currentIndex += batchSize;
+            loadIlanlar(currentIndex - batchSize, currentIndex);
+            loading = false;
+        }
+    }
+
+    document.querySelector('.list-container').addEventListener('scroll', onScroll);
+
+    // İlk Yükleme
+    loadIlanlar(0, batchSize);
+    //dinamık fiyat aralığı
+    function updateRange() {
+        var minRange = document.getElementById('minRange');
+        var maxRange = document.getElementById('maxRange');
+
+        var minValue = Math.min(minRange.value, maxRange.value);
+        var maxValue = Math.max(minRange.value, maxRange.value);
+
+        // Değerleri güncelle
+        document.getElementById('minValue').textContent = minValue;
+        document.getElementById('maxValue').textContent = maxValue;
+
+        // Slider track aralığını güncelle
+        var rangeContainer = document.querySelector('.range-container');
+        var track = document.querySelector('.slider-track');
+        var minPercent = (minValue / minRange.max) * 100;
+        var maxPercent = (maxValue / maxRange.max) * 100;
+
+        track.style.left = minPercent + '%';
+        track.style.width = (maxPercent - minPercent) + '%';
+    }
+
+    // Sayfa yüklendiğinde slider aralığını güncelle
+    updateRange();
+</script>
+
+</html>
